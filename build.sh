@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
 
-export CGO_ENABLED="0"
+set -x
+
+export CGO_ENABLED="1"
 export GO111MODULE=on
 
-set -x
 rm -r packages
 rm -r /usr/local/go/pkg/linux_amd64_dynlink/
 
