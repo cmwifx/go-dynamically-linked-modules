@@ -13,6 +13,8 @@ go install -pkgdir packages -buildmode=shared std
 # Does not output anything, no errors
 #go install -pkgdir packages -buildmode=shared -linkshared myLibrary/myLibrary.go
 
+# Fails, building dynamically linked plugins does not work
 go build -pkgdir packages -buildmode=plugin -linkshared -o build/myPlugin.so myPlugin/myPlugin.go
 
+# Works, dynamically linked application
 go build -pkgdir packages -linkshared -o build/myApplication myApplication/myApplication.go
